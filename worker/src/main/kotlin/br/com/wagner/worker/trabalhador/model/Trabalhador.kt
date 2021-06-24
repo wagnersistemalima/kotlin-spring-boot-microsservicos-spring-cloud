@@ -1,4 +1,4 @@
-package br.com.wagner.microcervissos.trabalhador.model
+package br.com.wagner.worker.trabalhador.model
 
 import java.math.BigDecimal
 import javax.persistence.*

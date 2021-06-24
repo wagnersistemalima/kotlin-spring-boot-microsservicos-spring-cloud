@@ -1,8 +1,8 @@
 package br.com.wagner.microcervissos
 
-import br.com.wagner.microcervissos.trabalhador.model.Trabalhador
-import br.com.wagner.microcervissos.trabalhador.repository.TrabalhadorRepository
-import br.com.wagner.microcervissos.trabalhador.request.NovoTrabalhadorRequest
+import br.com.wagner.worker.trabalhador.model.Trabalhador
+import br.com.wagner.worker.trabalhador.repository.TrabalhadorRepository
+import br.com.wagner.worker.trabalhador.request.NovoTrabalhadorRequest
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName

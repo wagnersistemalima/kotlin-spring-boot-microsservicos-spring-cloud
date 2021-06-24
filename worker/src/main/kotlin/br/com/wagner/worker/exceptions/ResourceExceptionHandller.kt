@@ -1,4 +1,4 @@
-package br.com.wagner.microcervissos.exceptions
+package br.com.wagner.worker.exceptions
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

@@ -1,4 +1,4 @@
-package br.com.wagner.microcervissos.exceptions
+package br.com.wagner.worker.exceptions
 
 import java.time.Instant
 

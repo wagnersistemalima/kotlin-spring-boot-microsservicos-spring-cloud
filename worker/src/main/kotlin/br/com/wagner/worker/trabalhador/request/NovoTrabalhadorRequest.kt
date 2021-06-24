@@ -1,6 +1,6 @@
-package br.com.wagner.microcervissos.trabalhador.request
+package br.com.wagner.worker.trabalhador.request
 
-import br.com.wagner.microcervissos.trabalhador.model.Trabalhador
+import br.com.wagner.worker.trabalhador.model.Trabalhador
 import org.hibernate.validator.constraints.br.CPF
 import java.math.BigDecimal
 import javax.validation.constraints.NotBlank

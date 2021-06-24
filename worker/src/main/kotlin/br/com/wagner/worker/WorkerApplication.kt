@@ -1,11 +1,11 @@
-package br.com.wagner.microcervissos
+package br.com.wagner.worker
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class MicrocervissosApplication
+class WorkerApplication
 
 fun main(args: Array<String>) {
-	runApplication<MicrocervissosApplication>(*args)
+	runApplication<WorkerApplication>(*args)
 }

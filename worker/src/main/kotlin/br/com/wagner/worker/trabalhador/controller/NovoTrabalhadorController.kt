@@ -1,8 +1,8 @@
-package br.com.wagner.microcervissos.trabalhador.controller
+package br.com.wagner.worker.trabalhador.controller
 
-import br.com.wagner.microcervissos.exceptions.ExceptionGenericValidated
-import br.com.wagner.microcervissos.trabalhador.repository.TrabalhadorRepository
-import br.com.wagner.microcervissos.trabalhador.request.NovoTrabalhadorRequest
+import br.com.wagner.worker.exceptions.ExceptionGenericValidated
+import br.com.wagner.worker.trabalhador.repository.TrabalhadorRepository
+import br.com.wagner.worker.trabalhador.request.NovoTrabalhadorRequest
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
