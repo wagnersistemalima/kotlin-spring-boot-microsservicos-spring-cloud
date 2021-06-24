@@ -35,4 +35,14 @@ class ResourceExceptionHandller {
 
         return  ResponseEntity.status(status).body(error)
     }
+
+    // metodo para tratar exception de recurso não encontrado
+
+    @ExceptionHandler(ResourceNotFoundException::class)
+    fun campoUnico(e: ResourceNotFoundException, request: HttpServletRequest): ResponseEntity<Any> {
+        val status = HttpStatus.NOT_FOUND
+        val error = ValidationError(Instant.now(), status.value(), "Recurso não encontrado", message = e.message!!, path = request.requestURI)
+
+        return  ResponseEntity.status(status).body(error)
+    }
 }

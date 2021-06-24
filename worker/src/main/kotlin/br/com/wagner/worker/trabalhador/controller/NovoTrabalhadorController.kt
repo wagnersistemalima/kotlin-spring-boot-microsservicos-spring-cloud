@@ -31,12 +31,14 @@ class NovoTrabalhadorController(@field:Autowired val trabalhadorRepository: Trab
         // validação campo unico
 
         if(trabalhadorRepository.existsByCpf(request.cpf)) {
+            logger.error("Entrou no if, cpf já cadastrado")
             throw ExceptionGenericValidated("Campo unico, cpf já cadastrado")
         }
 
         val trabalhador = request.toModel()
         trabalhadorRepository.save(trabalhador)
 
+        logger.info("Trabalhador cadastrado com sucesso")
         return ResponseEntity.ok().build()
     }
 }
