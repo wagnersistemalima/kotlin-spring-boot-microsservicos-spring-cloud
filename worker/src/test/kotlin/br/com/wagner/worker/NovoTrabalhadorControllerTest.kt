@@ -1,4 +1,4 @@
-package br.com.wagner.microcervissos
+package br.com.wagner.worker
 
 import br.com.wagner.worker.trabalhador.model.Trabalhador
 import br.com.wagner.worker.trabalhador.repository.TrabalhadorRepository
