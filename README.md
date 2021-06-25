@@ -87,3 +87,7 @@ server.port=${PORT:0}
 
 eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
 ```
+
+## API Gateway Zuul
+
+* porta padrão 8765
