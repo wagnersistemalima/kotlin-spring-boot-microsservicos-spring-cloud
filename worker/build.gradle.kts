@@ -16,6 +16,8 @@ repositories {
 	mavenCentral()
 }
 
+extra["springCloudVersion"] = "Hoxton.SR11"
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -29,9 +31,17 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
 	}
 }
 
