@@ -3,6 +3,7 @@ package br.com.wagner.folhadepagamento.service
 import br.com.wagner.folhadepagamento.apiExterna.ApiWorkerFeingClient
 import br.com.wagner.folhadepagamento.exception.ResourceNotFoundException
 import br.com.wagner.folhadepagamento.model.Pagamento
+import feign.FeignException
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
