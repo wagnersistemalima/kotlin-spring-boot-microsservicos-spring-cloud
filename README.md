@@ -65,7 +65,7 @@
 * 1.6 Feign
 * 1.7 Ribbon load balancing
 
-## Fase 2: Eureka server
+## Fase 2: Eureka server port default 8761
 
 * Criar projeto trabalhador-eureka-server
 * Servidor onde os microsserviços, vão se registrar, utilizando portas aleatorias.
