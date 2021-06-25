@@ -91,3 +91,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 ## API Gateway Zuul
 
 * porta padrão 8765
+
+# Fase 3: Configuração centralizada
+
+* Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
