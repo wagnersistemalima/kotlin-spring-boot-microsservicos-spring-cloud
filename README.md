@@ -72,13 +72,9 @@
 * O servidor Eureka vai tratar de registrar todas as instancias 
 * Quando for preciso chamar um microserviço, a chamada vai ser apenas pelo nome, sem a necessidade de colocar localização de porta. Vai ser automatico, com balanciamento de carga
 * Configurar projeto: Incluir a dependencia
-[jaxb-runtime maven](https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime)
+
 ```
-<!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
-		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
-		</dependency>
+implementation("org.glassfish.jaxb:jaxb-runtime:2.3.3-b01")
 
 ```
 ![alt text](https://github.com/wagnersistemalima/microsservicos-java-springboot-springcloud/blob/main/images/dashboardEurekaServer.png)
