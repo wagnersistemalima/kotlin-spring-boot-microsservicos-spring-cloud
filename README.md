@@ -78,3 +78,12 @@ implementation("org.glassfish.jaxb:jaxb-runtime:2.3.3-b01")
 
 ```
 ![alt text](https://github.com/wagnersistemalima/microsservicos-java-springboot-springcloud/blob/main/images/dashboardEurekaServer.png)
+
+## Random port para serviço worker
+* nome da aplicação , id da instancia, e um valor aleatorio
+
+```
+server.port=${PORT:0}
+
+eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
+```
