@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.mock.mockito.MockBean
+import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.test.web.servlet.MockMvc
@@ -58,21 +59,22 @@ class FolhaDePagamentoControllerTest {
     // 2 cenario de teste
 
     @Test
-    @DisplayName("deve retornar 404, quando não encontrar id do trabalhador")
-    fun consultaDeveRetornar404() {
+    @DisplayName("deve retornar caminho alternativo, quando ocorrer algum problema no serviço trabalhador")
+    fun consultaDeveRetornar200CaminhoAlternativo() {
 
         // cenario
 
-
-        val uri = UriComponentsBuilder.fromUriString("/pagamentos/{idTrabalhador}/dias/{dias}").buildAndExpand(5000, 5).toUri()
+        val pagamentoMockado = Pagamento(id = 3000, nome = "Brann", rendaDiaria = BigDecimal(400.0), quantDias = 5)
+        val uri = UriComponentsBuilder.fromUriString("/pagamentos/{idTrabalhador}/dias/{dias}").buildAndExpand(5000, pagamentoMockado.quantDias).toUri()
 
         // ação comportamento da api externa
 
-        Mockito.`when`(apiWorkerFeingClient.findById(5000)).thenReturn(ResponseEntity.notFound().build())
+        Mockito.`when`(apiWorkerFeingClient.findById(5000)).thenReturn(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build())
 
         mockMvc.perform(MockMvcRequestBuilders.get(uri)
             .contentType(MediaType.APPLICATION_JSON))
-            .andExpect(MockMvcResultMatchers.status().`is`(404))
+            .andExpect(MockMvcResultMatchers.status().`is`(200))
+            .andExpect(MockMvcResultMatchers.content().json(toJson(pagamentoMockado)))
 
 
         //assertivas
