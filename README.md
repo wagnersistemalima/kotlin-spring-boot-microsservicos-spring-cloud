@@ -96,7 +96,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 
 * Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
 
-## Autenticação e autorização
+## Fase 4: Autenticação e autorização
 
 * Criar projeto user
 * Configurar projeto user
