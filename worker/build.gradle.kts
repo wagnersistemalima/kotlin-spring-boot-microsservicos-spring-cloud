@@ -33,6 +33,8 @@ dependencies {
 
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
+	implementation("org.springframework.cloud:spring-cloud-starter-config")
+
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
