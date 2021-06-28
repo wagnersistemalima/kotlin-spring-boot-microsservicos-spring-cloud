@@ -91,6 +91,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 ## API Gateway Zuul
 
 * porta padrão 8765
+* configuração cliente eureka
 
 # Fase 3: Configuração centralizada
 
@@ -99,7 +100,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 ## Fase 4: Autenticação e autorização
 
 * Criar projeto user
-* Configurar projeto user
+* Configurar projeto user com porta aleatoria e cliente eureka
 * Configurar api-gateway
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/autenticacao.png)
