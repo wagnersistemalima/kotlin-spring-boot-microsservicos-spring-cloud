@@ -101,3 +101,5 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * Criar projeto user
 * Configurar projeto user
 * Configurar api-gateway
+
+![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/autenticacao.png)
