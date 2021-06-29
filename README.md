@@ -110,3 +110,4 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * Criar projeto oauth-server
 * Configurar projeto oauth-server
 * Fazer a comunicação do servidor oauth com o serviço user, quando chegar uma autorização no serviço oauth ele vai ter que chamar o serviço user, para buscar no banco de dados o usuario caso ele exista, então no projeto oauth tera que ter as definiçoes das classes usuario e perfil.
+* Login e token jwt parte 1, comunicação entre o cliente app com authorization server, o cliente app envia as credencias e o authorization server devolve um token
