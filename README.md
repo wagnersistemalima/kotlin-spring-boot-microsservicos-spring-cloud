@@ -104,3 +104,9 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * Configurar api-gateway
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/autenticacao.png)
+
+## Fase 5: 
+
+* Criar projeto oauth-server
+* Configurar projeto oauth-server
+* Fazer a comunicação do servidor oauth com o serviço user, quando chegar uma autorização no serviço oauth ele vai ter que chamar o serviço user, para buscar no banco de dados o usuario caso ele exista, então no projeto oauth tera que ter as definiçoes das classes usuario e perfil.
