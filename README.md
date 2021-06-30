@@ -153,7 +153,7 @@ fetch("http://localhost:8765/worker/trabalhadores", {
 });
 ```
 
-## Ajustando o servico worker como cliente do servidor de configuração: congig-server, ajustando os profiles ativos no repositorio de configuração
+## Ajustando o servico worker como cliente do servidor de configuração: config-server, ajustando os profiles ativos no repositorio de configuração
 * microsserviços de worker acessando o config-server para conectar o profile do banco de dados
 * microsserviço de user, acessando o config-server para conectar o profile do banco de dados
 * No arquivo bootstrap.properties configuramos somente o que for relacionado com o servidor de configuração, e também o profile do projeto.
