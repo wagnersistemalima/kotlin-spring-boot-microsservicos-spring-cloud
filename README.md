@@ -129,6 +129,10 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 ## Configuração de segurança para o servidor de configuração
 
 ## Configurando CORS
+* Recurso que os navegadores tem para evitar que uma aplicação que está em um dominio diferente possa acessar recursos de uma outra aplicação de dominio diferente da sua.
+* Motivos de segurança
+* Aqui irei liberar o cors para outra aplicação acessar, pois se trata de um back-end de uma aplicação de microsserviços
+* A api cliente ira acessar o ambiente dos microsserviços atravez do portal, api-gateway, então esta api vai liberar o cors
 * Teste no navegador:
 
 ```
