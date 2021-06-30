@@ -136,7 +136,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * Teste no navegador:
 
 ```
-fetch("http://localhost:8765/hr-worker/workers", {
+fetch("http://localhost:8765/worker/trabalhadores", {
   "headers": {
     "accept": "*/*",
     "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
