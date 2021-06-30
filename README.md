@@ -115,3 +115,36 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * Resource-server = api-gateway
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/token.png)
+
+## Login e geração do Token JWT
+
+* Source -> Override -> configure(AuthenticationManagerBuilder)
+
+* Source -> Override -> authenticationManager()
+
+* Basic authorization = "Basic " + Base64.encode(client-id + ":" + client-secret)
+
+## Autorização de recursos pelo gateway Zuul
+
+## Configuração de segurança para o servidor de configuração
+
+## Configurando CORS
+* Teste no navegador:
+
+```
+fetch("http://localhost:8765/hr-worker/workers", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9,pt-BR;q=0.8,pt;q=0.7",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "cross-site"
+  },
+  "referrer": "http://localhost:3000",
+  "referrerPolicy": "no-referrer-when-downgrade",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "omit"
+});
+```
