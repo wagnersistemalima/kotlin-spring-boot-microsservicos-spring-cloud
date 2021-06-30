@@ -1,6 +1,7 @@
 package br.com.wagner.oauthserver.appconfig
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
@@ -23,16 +24,25 @@ class AuthorizationServerConfig(
     @field:Autowired val jwtTokenStore: JwtTokenStore,
     @field:Autowired val authenticationManager: AuthenticationManager
 
+
 ): AuthorizationServerConfigurerAdapter() {
+
+
+    @field:Value("\${oauth.client.name}")
+    var clientName: String? = ""
+
+    @field:Value("\${oauth.client.secret}")
+    var clientSecret: String? = ""
 
     override fun configure(security: AuthorizationServerSecurityConfigurer?) {
         security!!.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()")
     }
 
     override fun configure(clients: ClientDetailsServiceConfigurer?) {
+
         clients!!.inMemory()
-            .withClient("myappname123")
-            .secret(passwordEncoder.encode("myappsecret123"))
+            .withClient(clientName)
+            .secret(passwordEncoder.encode(clientSecret))
             .scopes("read", "write")
             .authorizedGrantTypes("password")
             .accessTokenValiditySeconds(86400)   // vence em 24horas

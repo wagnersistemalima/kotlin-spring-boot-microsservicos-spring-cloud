@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/trabalhadores")
 class ServerConfigController() {
 
+    @field:Value("\${test.config}")
+    val testConfig: String? = ""
+
+
     val logger = LoggerFactory.getLogger(ServerConfigController::class.java)
 
     // end point para o servidor de configuração
 
     @GetMapping("/configs")
     fun getConfig(): ResponseEntity<Unit> {
-        logger.info("buscando as configuraçoes.... ")
+        logger.info("....buscando as configuraçoes...= $testConfig ")
 
         return  ResponseEntity.noContent().build()
     }

@@ -16,11 +16,6 @@ class ResourceServerConfig(
 
 ): ResourceServerConfigurerAdapter() {
 
-    var PUBLIC: Array<String> = arrayOf("/oauth/oauth/token")  // rota para fazer autenticação
-    var OPERATOR: Array<String> = arrayOf("/worker/**")    // rota autorizada para operador sera de trabalhador
-    var ADMIN: Array<String> = arrayOf("/payroll/**", "/user/**")   // para acessar qualquer rota de folha de pagamento e rota usuario tera perfil de admin
-
-
 
     override fun configure(resources: ResourceServerSecurityConfigurer?) {
         resources!!.tokenStore(tokenStore)
@@ -28,10 +23,13 @@ class ResourceServerConfig(
 
     override fun configure(http: HttpSecurity?) {
         http!!.authorizeRequests()
-            .antMatchers("/oauth/oauth/token").permitAll()
-            .antMatchers(HttpMethod.GET, "/worker/**").hasAnyRole("OPERATOR", "ADMIN")
+            .antMatchers("/oauth/oauth/token").permitAll()     // rota para fazer autenticação publica
+            .antMatchers(HttpMethod.GET, "/worker/**").hasAnyRole("OPERATOR", "ADMIN")  // rota autorizada para perfil operator e admin, rota trabalhador
             .antMatchers("/payroll/**").hasRole("ADMIN")
             .antMatchers("/user/**").hasRole("ADMIN")
+            .antMatchers("/actuator/**").hasRole("ADMIN")
+            .antMatchers("/worker/actuator/**").hasRole("ADMIN")
+            .antMatchers("/oauth/actuator/**").hasRole("ADMIN")
             .anyRequest().authenticated()
 
     }

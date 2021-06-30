@@ -38,18 +38,18 @@ class UserService(@field:Autowired val apiExternaUser: UserFeingClient): UserDet
     }
 
     override fun loadUserByUsername(username: String?): UserDetails {
-        logger.info(".....Iniciando a busca na api externa user por email $username .....")
+        logger.info("-------Iniciando a autenticação do usuario $username ---------")
 
         // chamada para api user
 
         try {
             val usuario = apiExternaUser.findByemail(username!!).body
 
-            logger.info("retornando usuario da api externa")
+            logger.info("--------Usuario validado pela apu user-------------")
             return usuario!!
         }
         catch (erro: Exception) {
-            logger.error(".....Entrou no if, email $username não encontrado.....")
+            logger.error("----------Entrou no if, usuario para autenticar $username não encontrado-----------")
             throw UsernameNotFoundException("Email not found")
         }
     }

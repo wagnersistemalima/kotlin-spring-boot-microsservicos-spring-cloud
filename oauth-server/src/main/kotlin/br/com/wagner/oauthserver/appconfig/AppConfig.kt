@@ -1,5 +1,6 @@
 package br.com.wagner.oauthserver.appconfig
 
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
@@ -7,7 +8,12 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore
 
 @Configuration
-class AppConfig {
+class AppConfig{
+
+
+
+    @field:Value("\${jwt.secret}")
+    var jwtSecret: String? = ""
 
     // criar primeiro bean
 
@@ -20,8 +26,9 @@ class AppConfig {
 
     @Bean
     fun acessTokenConverter(): JwtAccessTokenConverter {
+
         var tokenCoverter: JwtAccessTokenConverter? = JwtAccessTokenConverter()
-        tokenCoverter!!.setSigningKey("My-SECRET-KEY")
+        tokenCoverter!!.setSigningKey(jwtSecret)
         return tokenCoverter
     }
 

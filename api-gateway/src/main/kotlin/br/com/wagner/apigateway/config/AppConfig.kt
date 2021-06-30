@@ -1,19 +1,26 @@
 package br.com.wagner.apigateway.config
 
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.cloud.context.config.annotation.RefreshScope
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore
 
+@RefreshScope
 @Configuration
-class AppConfig {
+class AppConfig{
+
+    @field:Value("\${jwt.secret}")
+    var jwtSecret: String? = ""
 
     // criar segundo bean pra mexer com JWT
 
     @Bean
     fun acessTokenConverter(): JwtAccessTokenConverter {
+
         var tokenCoverter: JwtAccessTokenConverter? = JwtAccessTokenConverter()
-        tokenCoverter!!.setSigningKey("My-SECRET-KEY")
+        tokenCoverter!!.setSigningKey(jwtSecret)
         return tokenCoverter
     }
 
