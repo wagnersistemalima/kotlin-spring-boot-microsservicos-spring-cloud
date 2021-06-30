@@ -1,0 +1,3 @@
+INSERT INTO trabalhador (cpf, data_registro, nome, renda_diaria) VALUES ('63396109007', '2021-06-30 11:30:36.821487', 'Juliete Arretada', '200.0')
+INSERT INTO trabalhador (cpf, data_registro, nome, renda_diaria) VALUES ('17493218072', '2021-06-30 11:30:36.821487', 'Gil do Vigor', '100.0')
+INSERT INTO trabalhador (cpf, data_registro, nome, renda_diaria) VALUES ('07273251089', '2021-06-30 11:30:36.821487', 'Sara a amiga falsa', '7.0')
