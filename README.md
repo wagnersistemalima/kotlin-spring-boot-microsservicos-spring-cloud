@@ -161,3 +161,5 @@ fetch("http://localhost:8765/worker/trabalhadores", {
 * Atenção: as configurações do bootstrap.properties tem prioridade sobre as do application.properties
 
 ## Criando e testando containers Docker, está em construção 🔧🔨
+
+![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/docker.png)
