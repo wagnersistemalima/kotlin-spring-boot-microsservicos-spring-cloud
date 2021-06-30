@@ -12,7 +12,7 @@
 
 ![alt text](https://github.com/wagnersistemalima/microsservicos-java-springboot-springcloud/blob/main/images/imagemMicrosservico.png)
 
-## Visão do projeto:
+## Visão do projeto: Concluida!👋
 
 * Montar a estrutura do projeto, a comunicação entre os microsserviços, a configuração automatica, escala automatica e balanceamento de carga. 
 
@@ -54,8 +54,6 @@
 
 * Hystrix: é uma biblioteca de tolerância a falhas e latência projetada para isolar pontos de acesso em sistemas remotos, serviços e bibliotecas de terceiros, parar falhas em cascata e habilitar a resiliência em sistemas distribuídos complexos onde a falha é inevitável.
 
-# Status do Projeto = Está em construção 🔧
-
 # Fase 1: Comunicação simples, Feign, Ribbon. Concluida!👋
 
 * 1.1 Criar projeto trabalhador
@@ -88,7 +86,7 @@ server.port=${PORT:0}
 eureka.instance.instance-id=${spring.application.name}:${spring.application.instance_id:${random.value}}
 ```
 
-## API Gateway Zuul
+## API Gateway Zuul Concluida!👋
 
 * porta padrão 8765
 * configuração cliente eureka
@@ -116,7 +114,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/token.png)
 
-## Login e geração do Token JWT
+## Login e geração do Token JWT Concluida!👋
 
 * Source -> Override -> configure(AuthenticationManagerBuilder)
 
@@ -153,7 +151,7 @@ fetch("http://localhost:8765/worker/trabalhadores", {
 });
 ```
 
-## Ajustando o servico worker como cliente do servidor de configuração: config-server, ajustando os profiles ativos no repositorio de configuração
+## Ajustando o servico worker como cliente do servidor de configuração: config-server, ajustando os profiles ativos no repositorio de configuração Concluida!👋
 * microsserviços de worker acessando o config-server para conectar o profile do banco de dados
 * microsserviço de user, acessando o config-server para conectar o profile do banco de dados
 * No arquivo bootstrap.properties configuramos somente o que for relacionado com o servidor de configuração, e também o profile do projeto.
