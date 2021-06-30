@@ -2,13 +2,13 @@
 
 🔨 🔧... sistema composto por vários microsserviços que comunicam entre si de forma transparente, escalável e com balanceamento de carga, com autenticação e autorização, usando OAuth e tokens JWT. 
 
-## Setup do Projeto - microsserviços
+## Setup do Projeto - microsserviços Concluida!👋
 
 * Linguagem de programação: Kotlin
 * Tecnologia: Spring Boot
 * Gerenciador de dependência: Gradlle
 
-## Estrutura:
+## Estrutura: Concluida!👋
 
 ![alt text](https://github.com/wagnersistemalima/microsservicos-java-springboot-springcloud/blob/main/images/imagemMicrosservico.png)
 
@@ -32,7 +32,7 @@
 
 * Servidor de configuração.
 
-## Implementação utilizando as ferramentas do ecossistema Spring com Java
+## Implementação utilizando as ferramentas do ecossistema Spring com Java Concluida!👋
 
 * Banco de dados H2: banco de dados em memoria, para testes
 
@@ -65,7 +65,7 @@
 * 1.6 Feign
 * 1.7 Ribbon load balancing
 
-## Fase 2: Eureka server port default 8761
+## Fase 2: Eureka server port default 8761 Concluida!👋
 
 * Criar projeto trabalhador-eureka-server
 * Servidor onde os microsserviços, vão se registrar, utilizando portas aleatorias.
@@ -93,11 +93,11 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 * porta padrão 8765
 * configuração cliente eureka
 
-# Fase 3: Configuração centralizada
+# Fase 3: Configuração centralizada Concluida!👋
 
 * Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
 
-## Fase 4: Autenticação e autorização
+## Fase 4: Autenticação e autorização Concluida!👋
 
 * Criar projeto user
 * Configurar projeto user com porta aleatoria e cliente eureka
@@ -105,7 +105,7 @@ eureka.instance.instance-id=${spring.application.name}:${spring.application.inst
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/autenticacao.png)
 
-## Fase 5: 
+## Fase 5: Concluida!👋
 
 * Criar projeto oauth-server
 * Configurar projeto oauth-server
@@ -152,3 +152,12 @@ fetch("http://localhost:8765/worker/trabalhadores", {
   "credentials": "omit"
 });
 ```
+
+## Ajustando o servico worker como cliente do servidor de configuração: congig-server, ajustando os profiles ativos no repositorio de configuração
+* microsserviços de worker acessando o config-server para conectar o profile do banco de dados
+* microsserviço de user, acessando o config-server para conectar o profile do banco de dados
+* No arquivo bootstrap.properties configuramos somente o que for relacionado com o servidor de configuração, e também o profile do projeto.
+* Configuraçoes centralizadas no repositorio do github
+* Atenção: as configurações do bootstrap.properties tem prioridade sobre as do application.properties
+
+## Criando e testando containers Docker, está em construção 🔧🔨
