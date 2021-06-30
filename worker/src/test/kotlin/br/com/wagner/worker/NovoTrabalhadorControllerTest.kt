@@ -5,6 +5,7 @@ import br.com.wagner.worker.trabalhador.repository.TrabalhadorRepository
 import br.com.wagner.worker.trabalhador.request.NovoTrabalhadorRequest
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -36,10 +37,15 @@ class NovoTrabalhadorControllerTest {
     @field:Autowired
     lateinit var objectMapper: ObjectMapper
 
+    @BeforeEach
+    internal fun setUp() {
+        trabalhadorRepository.deleteAll()
+    }
+
     // rodar depois de cada teste
     @AfterEach
     internal fun tearDown() {
-        trabalhadorRepository.deleteAll()
+
 
     }
 

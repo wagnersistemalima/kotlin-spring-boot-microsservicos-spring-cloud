@@ -16,7 +16,7 @@ import javax.validation.Valid
 
 @Validated
 @RestController
-@RequestMapping("trabalhadores")
+@RequestMapping("/trabalhadores")
 class NovoTrabalhadorController(@field:Autowired val trabalhadorRepository: TrabalhadorRepository) {
 
     val logger = LoggerFactory.getLogger(NovoTrabalhadorController::class.java)
