@@ -214,10 +214,33 @@ EXPOSE 8888
 ADD ./build/libs/config-server-0.0.1-SNAPSHOT.jar hr-config-server.jar
 ENTRYPOINT ["java","-jar","/hr-config-server.jar"]
 ```
-* Criar imagem, e criar container
+* Criar imagem, e criar container hr-config-server
 
 ```
 docker build -t hr-config-server:v1 .
 
 docker run -p 8888:8888 --name hr-config-server --network hr-net -e GITHUB_USER=wagnersistemalima -e GITHUB_PASS= hr-config-server:v1
+```
+
+## Build do projeto hr-eureka-server
+
+```
+gradle clean build
+```
+
+* Criar arquivo Dockerfile na raiz do projeto
+
+```
+FROM openjdk:11
+VOLUME /tmp
+EXPOSE 8761
+ADD ./build/libs/eureka-server-0.0.1-SNAPSHOT.jar hr-eureka-server.jar
+ENTRYPOINT ["java","-jar","/hr-eureka-server.jar"]
+```
+* Criar imagem, e container hr-eureka-server
+
+```
+docker build -t hr-eureka-server:v1 .
+
+docker run -p 8761:8761 --name hr-eureka-server --network hr-net hr-eureka-server:v1
 ```
