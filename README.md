@@ -311,6 +311,27 @@ docker build -t hr-payroll:v1 .
 
 docker run -P --network hr-net hr-payroll:v1
 ```
+## Build do projeto oauth
+
+```
+gradle clean build
+```
+
+* Criar arquivo Dockerfile na raiz do projeto
+
+```
+FROM openjdk:11
+VOLUME /tmp
+ADD ./build/libs/oauth-server-0.0.1-SNAPSHOT.jar hr-oauth.jar
+ENTRYPOINT ["java","-jar","/hr-oauth.jar"]
+```
+* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+
+```
+docker build -t hr-oauth:v1 .
+
+docker run -P --network hr-net hr-oauth:v1
+```
 
 
 
