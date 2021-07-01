@@ -188,4 +188,4 @@ docker run -p 5432:5432 --name hr-worker-pg12 --network hr-net -e POSTGRES_PASSW
 docker run -p 5432:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_user postgres:12-alpine
 ```
 
-![alter text]()
+![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/container.png)
