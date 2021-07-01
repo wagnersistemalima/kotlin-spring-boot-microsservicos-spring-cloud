@@ -354,3 +354,18 @@ docker build -t hr-api-gateway-zuul:v1 .
 
 docker run -p 8765:8765 --name hr-api-gateway-zuul --network hr-net hr-api-gateway-zuul:v1
 ```
+
+## Para levantar mais instancias de microsserviços, worker, payrrol, oauth, user, é so levantar o contaner que automaticamente irao se registrar no eureka-server e o serviço da Api-gateway vai fazer o balanceamento de cargas.
+* É muito simples escalar varias instancias de um microsserviço, com configuração automatica e escala automatica
+
+```
+docker run -P --network hr-net hr-worker:v1
+docker run -P --network hr-net hr-user:v1
+docker run -P --network hr-net hr-payroll:v1
+docker run -P --network hr-net hr-oauth:v1
+```
+## Quando quiser derrubar uma instancia basta digitar o comando
+
+```
+docker stop idContainer
+```
