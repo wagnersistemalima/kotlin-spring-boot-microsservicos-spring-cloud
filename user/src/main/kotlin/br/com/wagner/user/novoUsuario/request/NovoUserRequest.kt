@@ -1,8 +1,6 @@
 package br.com.wagner.user.novoUsuario.request
 
-import br.com.wagner.user.novoUsuario.exceptions.ExceptionGenericValidated
 import br.com.wagner.user.novoUsuario.model.User
-import br.com.wagner.user.novoUsuario.repository.UserRepository
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank

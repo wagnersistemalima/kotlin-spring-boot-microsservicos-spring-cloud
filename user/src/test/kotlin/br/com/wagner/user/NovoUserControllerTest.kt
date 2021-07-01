@@ -24,7 +24,7 @@ import java.net.URI
 @AutoConfigureDataJpa
 @ActiveProfiles("test")
 @Transactional
-class novoUserControllerTest {
+class NovoUserControllerTest {
 
     @field:Autowired
     lateinit var userRepository: UserRepository
@@ -135,7 +135,7 @@ class novoUserControllerTest {
 
         // cenario
 
-        val user = User(nome = "Maria", email = "maria@gmail.com", passwords = "123456")
+        val user = User(nome = "Maria", email = "maria@gmail.com", password = "123456")
         userRepository.save(user)
 
         val uri = URI("/users")
@@ -151,9 +151,6 @@ class novoUserControllerTest {
 
         /// assertivas
     }
-
-
-
 
     // metodo para desserializar objeto da request
 

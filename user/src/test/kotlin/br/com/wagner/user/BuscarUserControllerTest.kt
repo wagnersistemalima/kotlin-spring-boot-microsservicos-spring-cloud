@@ -47,7 +47,7 @@ class BuscarUserControllerTest {
 
         // cenario
 
-        val user = User(nome = "Maria", email = "maria@gmeil.com", passwords = "123456")
+        val user = User(nome = "Maria", email = "maria@gmeil.com", password = "123456")
         userRepository.save(user)
 
         val uri = UriComponentsBuilder.fromUriString("/users/{id}").buildAndExpand(user.id).toUri()
@@ -69,7 +69,7 @@ class BuscarUserControllerTest {
 
         // cenario
 
-        val user = User(nome = "Maria", email = "maria@gmeil.com", passwords = "123456")
+        val user = User(nome = "Maria", email = "maria@gmeil.com", password = "123456")
         userRepository.save(user)
 
         val uri = UriComponentsBuilder.fromUriString("/users/{id}").buildAndExpand(5000).toUri()
