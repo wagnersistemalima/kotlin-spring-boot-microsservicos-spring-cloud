@@ -369,3 +369,5 @@ docker run -P --network hr-net hr-oauth:v1
 ```
 docker stop idContainer
 ```
+
+![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/eurekaInstancias.png)
