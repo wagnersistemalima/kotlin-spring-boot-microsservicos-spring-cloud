@@ -289,3 +289,28 @@ docker build -t hr-user:v1 .
 
 docker run -P --network hr-net hr-user:v1
 ```
+
+## Build do projeto payroll
+
+```
+gradle clean build
+```
+
+* Criar arquivo Dockerfile na raiz do projeto
+
+```
+FROM openjdk:11
+VOLUME /tmp
+ADD ./build/libs/folha-de-pagamento-0.0.1-SNAPSHOT.jar hr-payroll.jar
+ENTRYPOINT ["java","-jar","/hr-payroll.jar"]
+```
+* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+
+```
+docker build -t hr-payroll:v1 .
+
+docker run -P --network hr-net hr-payroll:v1
+```
+
+
+
