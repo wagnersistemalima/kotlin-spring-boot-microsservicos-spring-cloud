@@ -355,7 +355,7 @@ docker build -t hr-api-gateway-zuul:v1 .
 docker run -p 8765:8765 --name hr-api-gateway-zuul --network hr-net hr-api-gateway-zuul:v1
 ```
 
-## Para levantar mais instancias de microsserviços, worker, payrrol, oauth, user, é so levantar o contaner que automaticamente irao se registrar no eureka-server e o serviço da Api-gateway vai fazer o balanceamento de cargas.
+## Para levantar mais instancias de microsserviços, worker, payrrol, oauth, user, é so levantar o container que automaticamente irao se registrar no eureka-server e o serviço da Api-gateway vai fazer o balanceamento de cargas.
 * É muito simples escalar varias instancias de um microsserviço, com configuração automatica e escala automatica
 
 ```
