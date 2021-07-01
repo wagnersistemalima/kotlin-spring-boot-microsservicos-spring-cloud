@@ -32,7 +32,7 @@
 
 * Servidor de configuração.
 
-## Implementação utilizando as ferramentas do ecossistema Spring com Java Concluida!👋
+## Implementação utilizando as ferramentas do ecossistema Spring com Kotlin Concluida!👋
 
 * Banco de dados H2: banco de dados em memoria, para testes
 
