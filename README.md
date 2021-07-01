@@ -259,7 +259,7 @@ VOLUME /tmp
 ADD ./build/libs/microcervissos-0.0.1-SNAPSHOT.jar hr-worker.jar
 ENTRYPOINT ["java","-jar","/hr-worker.jar"]
 ```
-* Criar imagem, e container hr-worker
+* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria
 
 ```
 docker build -t hr-worker:v1 .
