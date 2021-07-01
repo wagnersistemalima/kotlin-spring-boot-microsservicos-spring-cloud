@@ -189,3 +189,7 @@ docker run -p 5433:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWOR
 ```
 
 ![alter text](https://github.com/wagnersistemalima/kotlin-spring-boot-microsservicos-spring-cloud/blob/main/images/container.png)
+
+## Obs
+* Alguns container serão fixo, terá nome e porta
+* Outros container serão escalaveis, eles se registram no servidor-eureka e o api_gateway vai rotear eles automaticamente resolvendo pelo nome do container 
