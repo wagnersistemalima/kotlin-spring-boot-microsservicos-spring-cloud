@@ -333,5 +333,13 @@ docker build -t hr-oauth:v1 .
 docker run -P --network hr-net hr-oauth:v1
 ```
 
+## Build do projeto api-gateway
 
+```
+gradle clean build
+```
+* Criar arquivo Dockerfile na raiz do projeto
 
+```
+
+```
