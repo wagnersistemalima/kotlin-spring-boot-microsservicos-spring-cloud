@@ -266,3 +266,26 @@ docker build -t hr-worker:v1 .
 
 docker run -P --network hr-net hr-worker:v1
 ```
+
+## Build do projeto user
+
+```
+gradle clean build
+```
+
+* Criar arquivo Dockerfile na raiz do projeto
+
+```
+FROM openjdk:11
+VOLUME /tmp
+ADD ./build/libs/user-0.0.1-SNAPSHOT.jar hr-user.jar
+ENTRYPOINT ["java","-jar","/hr-user.jar"]
+```
+
+* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+
+```
+docker build -t hr-user:v1 .
+
+docker run -P --network hr-net hr-user:v1
+```
