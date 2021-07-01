@@ -282,7 +282,7 @@ ADD ./build/libs/user-0.0.1-SNAPSHOT.jar hr-user.jar
 ENTRYPOINT ["java","-jar","/hr-user.jar"]
 ```
 
-* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+* Criar imagem, e container hr-user. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
 
 ```
 docker build -t hr-user:v1 .
@@ -304,7 +304,7 @@ VOLUME /tmp
 ADD ./build/libs/folha-de-pagamento-0.0.1-SNAPSHOT.jar hr-payroll.jar
 ENTRYPOINT ["java","-jar","/hr-payroll.jar"]
 ```
-* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+* Criar imagem, e container hr-payoll. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
 
 ```
 docker build -t hr-payroll:v1 .
@@ -325,7 +325,7 @@ VOLUME /tmp
 ADD ./build/libs/oauth-server-0.0.1-SNAPSHOT.jar hr-oauth.jar
 ENTRYPOINT ["java","-jar","/hr-oauth.jar"]
 ```
-* Criar imagem, e container hr-worker. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
+* Criar imagem, e container hr-oauth. Comando gerado com -P maiusculo faz com que gere um container com porta aleatoria, não será preciso dar nome ao container, pois eles serão alto escalaveis
 
 ```
 docker build -t hr-oauth:v1 .
@@ -341,5 +341,16 @@ gradle clean build
 * Criar arquivo Dockerfile na raiz do projeto
 
 ```
+FROM openjdk:11
+VOLUME /tmp
+EXPOSE 8765
+ADD ./build/libs/api-gateway-0.0.1-SNAPSHOT.jar hr-api-gateway-zuul.jar
+ENTRYPOINT ["java","-jar","/hr-api-gateway-zuul.jar"]
+```
+* Criar imagem, e container hr-api-gateway. 
 
+```
+docker build -t hr-api-gateway-zuul:v1 .
+
+docker run -p 8765:8765 --name hr-api-gateway-zuul --network hr-net hr-api-gateway-zuul:v1
 ```
