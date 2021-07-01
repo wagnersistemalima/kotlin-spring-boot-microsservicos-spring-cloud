@@ -198,3 +198,26 @@ docker run -p 5433:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWOR
 * Servidor de configuração
 * Servidor Eureka
 * Banco de dados
+
+## Build do projeto hr-config-server
+
+```
+gradle clean build
+```
+
+* Criar arquivo Dockerfile na raiz do projeto
+
+```
+FROM openjdk:11
+VOLUME /tmp
+EXPOSE 8888
+ADD ./build/libs/config-server-0.0.1-SNAPSHOT.jar hr-config-server.jar
+ENTRYPOINT ["java","-jar","/hr-config-server.jar"]
+```
+* Criar imagem, e criar container
+
+```
+docker build -t hr-config-server:v1 .
+
+docker run -p 8888:8888 --name hr-config-server --network hr-net -e GITHUB_USER=wagnersistemalima -e GITHUB_PASS= hr-config-server:v1
+```
