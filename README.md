@@ -169,3 +169,23 @@ fetch("http://localhost:8765/worker/trabalhadores", {
 * Isso reduz drasticamente o tempo de deploy de alguma infraestrutura ou até mesmo aplicação, pois não há necessidade de ajustes de ambiente para o correto funcionamento do serviço, o ambiente é sempre o mesmo, configure-o uma vez e replique-o quantas vezes quiser.
 
 * Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles
+
+## Criando e testando containers Docker
+
+* Criar rede docker para sistema hr
+
+```
+docker network create hr-net
+
+```
+# Testando perfil dev dos microsserviços user e worker com Postgresql no Docker
+
+```
+docker pull postgres:12-alpine
+
+docker run -p 5432:5432 --name hr-worker-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_worker postgres:12-alpine
+
+docker run -p 5432:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_user postgres:12-alpine
+```
+
+![alter text]()
